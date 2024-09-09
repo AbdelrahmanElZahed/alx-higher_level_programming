@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Check if PYFILE is set
+if [ -z "$PYFILE" ]; then
+    echo "PYFILE environment variable is not set."
+    exit 1
+fi
+
+# Compile the Python file
+echo "Compiling $PYFILE ..."
+python3 -m py_compile "$PYFILE"
+
+# Find the compiled .pyc file in the __pycache__ directory
+compiled_file=$(find __pycache__ -name "$(basename "$PYFILE" .py).cpython-*.pyc")
+
+# Check if the compiled file was found
+if [ -z "$compiled_file" ]; then
+    echo "Error: Compiled file not found."
+    exit 1
+fi
+
+# Rename the compiled file to $PYFILEc
+output_file="${PYFILE}c"
+mv "$compiled_file" "$output_file"
+
+echo "Compilation complete. Output file: $output_file"
+
