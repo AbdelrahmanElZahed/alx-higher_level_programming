@@ -6,4 +6,5 @@ def print_tebahpla():
     )
     print("{}".format(result), end="")
 
+
 print_tebahpla()
