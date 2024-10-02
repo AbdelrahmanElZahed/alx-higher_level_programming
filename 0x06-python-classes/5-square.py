@@ -9,16 +9,17 @@ class Square:
 
         Args:
             size: Length of a side of the square
-            """
+        """
         self.size = size
 
     @property
     def size(self):
         """Property for the length of a side of this square.
-        Raise:
+        
+        Raises:
             TypeError: If size is not integer.
             ValueError: If size is less than 0.
-            """
+        """
         return self.__size
 
     @size.setter
@@ -31,9 +32,10 @@ class Square:
 
     def area(self):
         """Area of this square.
+        
         Returns:
             The size squared.
-            """
+        """
         return self.__size ** 2
 
     def my_print(self):
