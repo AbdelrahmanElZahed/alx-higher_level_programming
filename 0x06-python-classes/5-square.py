@@ -5,27 +5,39 @@ class Square:
     """Define a square."""
     
     def __init__(self, size=0):
-        """Initialize the size of the square."""
-        self.size = size  # Use the setter for initialization
+        """Constructor.
+
+        Args:
+            size: Length of a side of the square
+            """
+        self.size = size
 
     @property
     def size(self):
-        """Retrieve the size of the square."""
+        """Property for the length of a side of this square.
+        Raise:
+            TypeError: If size is not integer.
+            ValueError: If size is less than 0.
+            """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Set the size of the square."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
-        self.__size = value  # Private instance attribute
+        self.__size = value
 
     def area(self):
-        """Return the current square area."""
-        return self.__size ** 2  # Area calculation
+        """Area of this square.
+        Returns:
+            The size squared.
+            """
+        return self.__size ** 2
 
     def my_print(self):
-        """Print the square with the character
-
+        """Prints this square."""
+        for i in range(self.size):
+            print("#", end="\n" if j is self.size - 1 and i !=j else "")
+        print()
