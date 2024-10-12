@@ -1,0 +1,29 @@
+>>> text_indentation("Hello. How are you? I am fine. Thank you!")
+Hello.
+
+How are you?
+
+I am fine.
+
+Thank you!
+>>> text_indentation("This is a test: check this? Yes!")
+This is a test:
+
+check this?
+
+Yes!
+>>> text_indentation("No punctuation here")
+No punctuation here
+>>> text_indentation(123)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
+>>> text_indentation("Test.  This is a test: does it work?  Yes!")
+Test.
+
+This is a test:
+
+does it work?
+
+Yes!
+
