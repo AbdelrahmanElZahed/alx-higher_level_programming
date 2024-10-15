@@ -1,9 +1,12 @@
 #!/usr/bin/python3
+'''Module for lookup method.'''
+
+
 def lookup(obj):
-    """Return a list of available attributes and methods of an object.
-
-    This function retrieves the names of all attributes and methods of the 
-    given object, including those inherited from its class hierarchy.
-    """
+    '''Looks up objects attributes and methods.
+    Args:
+        obj (object): The object to list.
+    Returns:
+        list: the list of attributes.
+    '''
     return dir(obj)
-
